@@ -1,0 +1,9 @@
+pandas
+openpyxl
+elevenlabs
+pydub
+tqdm
+numpy
+scipy
+datasets  # For Hugging Face integration
+huggingface_hub
