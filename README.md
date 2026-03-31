@@ -11,7 +11,6 @@ A prototype developed during an internship that builds audio-based guardrails an
 ## Repository Structure
 - `audio_guardrail_prototype_code/` — this folder with analysis and model notebooks.
 - `ETL_text_audio_eleven_labs/` — ETL code, TTS integration, and augmentation scripts (primary pipeline).
-- `Synthetic Data Pipeline/` — data generator utilities and final synthetic dataset CSV.
 
 Key files to inspect
 - Notebooks: [data_analysis.ipynb](data_analysis.ipynb), [model_impli.ipynb](model_impli.ipynb), [eleven_labs_api.ipynb](eleven_labs_api.ipynb)
@@ -44,40 +43,3 @@ This section explains the end-to-end approach so contributors and reviewers can 
 5) Reproducibility & recommended environment
 	- Use a Python virtual environment and install dependencies from `ETL_text_audio_eleven_labs/requirements.txt`.
 	- For model training, a GPU instance (>=16GB GPU memory) is recommended. Use CUDA-compatible drivers and the appropriate `transformers`/`torchaudio` builds.
-
-## Quickstart
-1. Create and activate a virtual environment
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-```
-
-2. Install ETL dependencies
-
-```bash
-pip install -r ETL_text_audio_eleven_labs/requirements.txt
-```
-
-3. Run the ETL pipeline (example)
-
-```bash
-python ETL_text_audio_eleven_labs/main.py --input input/texts.csv --out data/audio_manifest.csv
-```
-
-4. Launch notebooks for analysis and model experiments
-
-```bash
-jupyter lab
-```
-
-## Notes & Considerations
-- Ethics & privacy: voice cloning and synthetic data usage may have legal/ethical constraints. Obtain necessary permissions for any real user data and follow company policy.
-- Cost: TTS APIs and GPU EC2 instances incur real costs—monitor usage and store only necessary artifacts.
-- Extensibility: The ETL adapter pattern makes it straightforward to add more TTS vendors or augmentation modules.
-
-## Contact & Licensing
-- For questions about methodology or reuse, contact the project owner from the internship.
-- License: Prototype work — confirm reuse and distribution permissions with the owner before publishing.
-
-
